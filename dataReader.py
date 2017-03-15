@@ -12,10 +12,12 @@ def get_test_set():
 
 
 def get_set(filename):
-    with open(filename, 'rb') as csvFile:
+    result = []
+    with open(filename, 'r') as csvFile:
         lines = csv.reader(csvFile)
         dataset = list(lines)
         for x in range(len(dataset) - 1):
-            for y in range(COLUMNS_COUNT):
+            for y in range(4):
                 dataset[x][y] = float(dataset[x][y])
-        return dataset
+            result.append(dataset[x])
+        return result
