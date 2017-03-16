@@ -15,9 +15,13 @@ def get_set(filename):
     result = []
     with open(filename, 'r') as csvFile:
         lines = csv.reader(csvFile)
-        dataset = list(lines)
-        for x in range(len(dataset) - 1):
-            for y in range(4):
-                dataset[x][y] = float(dataset[x][y])
-            result.append(dataset[x])
-        return result
+        return convertCsvDataToFloats(lines, result)
+
+
+def convertCsvDataToFloats(lines, result):
+    dataset = list(lines)
+    for x in range(len(dataset) - 1):
+        for y in range(COLUMNS_COUNT):
+            dataset[x][y] = float(dataset[x][y])
+        result.append(dataset[x])
+    return result
