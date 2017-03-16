@@ -4,14 +4,14 @@ COLUMNS_COUNT = 4
 
 
 def get_training_set():
-    return get_set("train.txt")
+    return get_set_generic("train.txt")
 
 
 def get_test_set():
-    return get_set("test.txt")
+    return get_set_generic("test.txt")
 
 
-def get_set(filename):
+def get_set_generic(filename):
     result = []
     with open(filename, 'r') as csvFile:
         lines = csv.reader(csvFile)
@@ -25,3 +25,5 @@ def convertCsvDataToFloats(lines, result):
             dataset[x][y] = float(dataset[x][y])
         result.append(dataset[x])
     return result
+
+
