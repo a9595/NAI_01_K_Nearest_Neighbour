@@ -38,8 +38,8 @@ def createGraph():
 
     data = [trace1, trace2]
     layout = dict(title='correct %',
-                  xaxis=dict(title='K value [1]'),
-                  yaxis=dict(title='Accuracy of kNN [%]'),
+                  xaxis=dict(title='K value'),
+                  yaxis=dict(title='Accuracy %'),
                   )
 
     fig = dict(data=data, layout=layout)

@@ -35,8 +35,8 @@ def calculateWithK(test_set_by_user=[], k=-1, trainingSet=[]):
         testSet = test_set_by_user
 
     trainingSet = get_training_set()
-    print trainingSet
-    print testSet
+    print 'training set -->  ' + repr(trainingSet)
+    print 'testing set --> ' + repr(testSet)
     # predictions
     predictions = []
     for x in range(len(testSet)):
