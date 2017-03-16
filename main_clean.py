@@ -6,24 +6,26 @@ from neighbors import get_neighbors
 from response import get_response
 
 
-def recieveTestDataInput():
-    user_data_input = raw_input('Type in data (for ex. "4,3,1,0,Iris-setosa"):  ')
-    lines = csv.reader(user_input)
-    converted_training_set = []
-    convertCsvDataToFloats(lines, converted_training_set)
-    calculateWithK(converted_training_set)
+def recieveTestDataInputByUser():
+    testSet = []
+    # print('')
+    var1, var2, var3, var4, varClass = raw_input('Type in data (for ex. "4 3 1 0 Iris-setosa"):  ').split(' ')
+    testSet.append([float(var1), float(var2), float(var3), float(var4), varClass])
+    calculateWithK(testSet)
 
 
-def calculateWithK(training_set_by_user=-1):
+def calculateWithK(test_set_by_user=[]):
     k = raw_input("Please input K: ")
     k = int(k)
     global neighbors, accuracy
+
     # data preparation
-    if (training_set_by_user == -1):
-        trainingSet = get_training_set()
+    if (test_set_by_user == -1):
+        testSet = get_test_set()
     else:
-        trainingSet = training_set_by_user
-    testSet = get_test_set()
+        testSet = test_set_by_user
+
+    trainingSet = get_training_set()
     print trainingSet
     print testSet
     # predictions
@@ -50,4 +52,4 @@ if user_input == '1':
     calculateWithK()
 
 if user_input == '2':
-    recieveTestDataInput()
+    recieveTestDataInputByUser()
