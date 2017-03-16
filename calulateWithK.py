@@ -4,7 +4,7 @@ from neighbors import get_neighbors
 from response import get_response
 
 
-def calculateWithK(test_set_by_user=[], k=-1):
+def calculateWithK(test_set_by_user=[], k=-1, trainingSet=[]):
     if (k == -1):
         k = raw_input("Please input K: ")
         k = int(k)
@@ -33,7 +33,7 @@ def calculateWithK(test_set_by_user=[], k=-1):
     print('Accuracy: ' + repr(accuracy) + '%')
 
 
-def recieveTestDataInputByUser():
+def receiveTestDataInputByUser():
     testSet = []
     var1, var2, var3, var4, varClass = raw_input('Type in data (for ex. "4 3 1 0 Iris-setosa"):  ').split(' ')
     testSet.append([float(var1), float(var2), float(var3), float(var4), varClass])

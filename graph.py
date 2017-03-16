@@ -31,7 +31,7 @@ def createGraph():
         x=x_new,
         y=y_new,
         mode='lines',
-        marker=Marker(color='rgb(0, 204, 0)'),
+        marker=Marker(color='rgb(100, 100, 100)'),
         name='Fit'
     )
 
